@@ -42,6 +42,12 @@ let g:lightline = {
 let g:rainbow_active = 1
 
 " Vim Colours
-colorscheme desert
 set t_Co=256 " So that it works with tmux
 set background=dark " same here, tmux compatibility
+colorscheme desert
+syntax on
+" To fix some issues with the highlight group, either because Debian vim comes
+" with a different version of the colorscheme. Use `:hi` to check the values
+" https://stackoverflow.com/questions/54631109/vim-colorscheme-leaves-trailing-black-whitespace-in-random-places
+hi Normal ctermbg=NONE
+hi NonText ctermbg=NONE
